@@ -39,6 +39,43 @@ public class LinkedList<T> {
 		this.head = new ListNode<T>(i,this.head);
 		size++;
 	}
+	
+	/**
+	 * Insert a node at the specified index
+	 * @param index
+	 * @param node
+	 */
+	public void insertAt(long index, ListNode<T> node){
+		
+	}
+	
+	/**
+	 * This deletes the node that is at the head of the list
+	 */
+	public void deleteNode(){
+		this.head = this.head.getNextNode();
+		this.size--;
+	}
+	
+	/**
+	 * Get a node at a specified index
+	 * The index is in the range from 1 to n
+	 * Head is index 1 and tail is index n
+	 * 
+	 * @param index
+	 * @return
+	 */
+	public ListNode<T> getNode(long index) throws IndexOutOfBoundsException{
+		if(index>this.size || index<1){
+			throw new IndexOutOfBoundsException("index "+index+" is not in the range " +
+					"of 1 and "+this.size);
+		}
+		ListNode<T> node = this.getHead();
+		for(long i = 1; i<index; i++){
+			node = node.getNextNode();
+		}
+		return node;
+	}
 
 	public ListNode<T> getHead() {
 		return this.head;
