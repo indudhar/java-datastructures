@@ -44,5 +44,9 @@ public class ListNode<T> {
 	public String toString(){
 		return this.item.toString();
 	}
+
+	protected void setNextNode(ListNode<T> nextNode) {
+		this.nextNode = nextNode;
+	}
 	
 }

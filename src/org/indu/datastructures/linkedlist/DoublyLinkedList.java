@@ -14,8 +14,8 @@ public class DoublyLinkedList<T> {
 	
 	private DoublyLinkedNode<T> head;
 	private DoublyLinkedNode<T> tail;
-	private long size;
+	private long size; //the number of items, not nodes
 	
-	
+	//sentinel
 
 }

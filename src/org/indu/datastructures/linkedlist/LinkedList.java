@@ -24,31 +24,38 @@ package org.indu.datastructures.linkedlist;
 public class LinkedList<T> {
 
 	private ListNode<T> head;
-	private long size;
-	
+	private long size; //number of items, not nodes
+
 	public LinkedList(){
-		head = null;
-		size = 0;
+		this.head = null;
+		this.size = 0;
 	}
-	
+
 	/**
 	 * Creates a new node and inserts it right next to this node containing the new item.
 	 * @param i
 	 */
 	public void insertAfter(T i){
 		this.head = new ListNode<T>(i,this.head);
-		size++;
+		this.size++;
 	}
-	
+
 	/**
 	 * Insert a node at the specified index
 	 * @param index
 	 * @param node
 	 */
-	public void insertAt(long index, ListNode<T> node){
-		
+	public void insertAt(long index, T item){
+		if(index==0){
+			insertAfter(item);
+		}else{
+			ListNode<T> nodePriorToIndex = getNode(index-1);
+			ListNode<T> newNode = new ListNode<T>(item, nodePriorToIndex.getNextNode());
+			nodePriorToIndex.setNextNode(newNode);
+			this.size++;
+		}
 	}
-	
+
 	/**
 	 * This deletes the node that is at the head of the list
 	 */
@@ -56,7 +63,7 @@ public class LinkedList<T> {
 		this.head = this.head.getNextNode();
 		this.size--;
 	}
-	
+
 	/**
 	 * Get a node at a specified index
 	 * The index is in the range from 1 to n

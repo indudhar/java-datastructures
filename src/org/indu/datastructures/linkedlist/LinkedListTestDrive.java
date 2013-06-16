@@ -34,9 +34,30 @@ public class LinkedListTestDrive {
 		Logger.info("size = "+linkedList.getSize());
 
 		//get node nth node
-		ListNode<String> node = linkedList.getNode(0);
+		ListNode<String> node = linkedList.getNode(1);
 		Logger.info(" 1 -> "+node.toString());
 
+		//insert
+		linkedList.insertAt(2, "Morocco");
+		displayList(linkedList.getHead());
+		Logger.info("inserted at 2");
+
+		//insert
+		linkedList.insertAt(0, "Austria");
+		displayList(linkedList.getHead());
+		Logger.info("inserted at 0");
+
+
+		//insert
+		linkedList.insertAt(linkedList.getSize(), "Switzerland");
+		displayList(linkedList.getHead());
+		Logger.info("inserted at size");
+
+		//insert
+		linkedList.insertAt(linkedList.getSize()+1, "Zambia");
+		displayList(linkedList.getHead());
+		Logger.info("inserted at size+1");
+				
 		//delete node at the head of the list
 		linkedList.deleteNode();
 		displayList(linkedList.getHead());
