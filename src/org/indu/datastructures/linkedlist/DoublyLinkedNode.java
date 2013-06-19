@@ -25,12 +25,12 @@ public class DoublyLinkedNode<T> {
 	/**
 	 * 
 	 * @param i
-	 * @param node
+	 * @param pnode
 	 */
-	public DoublyLinkedNode(T i, DoublyLinkedNode<T> node){
+	public DoublyLinkedNode(T i, DoublyLinkedNode<T> pnode, DoublyLinkedNode<T> nnode){
 		this.item = i;
-		this.nextNode = node;
-		this.previousNode = null;
+		this.nextNode = nnode;
+		this.previousNode = pnode;
 	}
 	
 	public DoublyLinkedNode<T> getNextNode() {
